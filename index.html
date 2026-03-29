@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core.Shell.Dev | Terminal</title>
+    <style>
+        :root { --neon-green: #00ff41; --bg-black: #050505; }
+        body {
+            background-color: var(--bg-black);
+            color: var(--neon-green);
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .terminal-window {
+            width: 90%;
+            max-width: 450px;
+            border: 1px solid var(--neon-green);
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+            position: relative;
+        }
+        .header { margin-bottom: 25px; border-bottom: 1px solid #1a1a1a; padding-bottom: 10px; }
+        .typewriter { font-size: 1.1rem; font-weight: bold; min-height: 1.2em; }
+        
+        .btn-link {
+            display: block;
+            text-decoration: none;
+            color: var(--bg-black);
+            background-color: var(--neon-green);
+            padding: 14px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: 900;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            clip-path: polygon(7% 0, 100% 0, 100% 70%, 93% 100%, 0 100%, 0% 30%);
+        }
+        .btn-link:hover {
+            background-color: var(--bg-black);
+            color: var(--neon-green);
+            box-shadow: inset 0 0 10px var(--neon-green);
+        }
+        .cursor { display: inline-block; width: 10px; height: 18px; background: var(--neon-green); animation: blink 0.8s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        .footer-info { font-size: 0.75rem; color: #444; margin-top: 20px; line-height: 1.4; }
+    </style>
+</head>
+<body>
+    <div class="terminal-window">
+        <div class="header">
+            <div class="typewriter" id="typing-text"></div>
+        </div>
+
+        <a href="https://wa.me/SEU_NUMERO" class="btn-link">/EXECUTE_CONTATO</a>
+        <a href="https://github.com/SEU_USER" class="btn-link">/ACCESS_GITHUB</a>
+        <a href="LINK_DELIFRIO" class="btn-link">/VIEW_PORTFOLIO_PWA</a>
+
+        <div class="footer-info">
+            [SYS] ARCHON_OS LOADED...<br>
+            [ENV] PYTHON, NODE, PHP, SHELL<br>
+            [LOC] BRAZIL_EST_2026
+        </div>
+    </div>
+
+    <script>
+        const text = "CORE.SHELL.DEV >_";
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typing-text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 150);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
